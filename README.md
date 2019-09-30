@@ -1,4 +1,4 @@
-#**StockX.NET**
+# **StockX.NET** #
 
 Welcome! This project is a simple SDK that allows users to interface with StockX API without having to scrape for their endpoints and structures.
 
