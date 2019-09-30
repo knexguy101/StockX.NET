@@ -5,6 +5,7 @@ This project is free and can be used however and wherever, but I am not responsi
 TODO:
 - Buy and Sell Abilities
 
+FUNCTIONS:
 SearchProducts:
 -Condition- the search string, the function will automatically URL encode this
 -Proxy- the optional proxy that can be used to contact the server with
