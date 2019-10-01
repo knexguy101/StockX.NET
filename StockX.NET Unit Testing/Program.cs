@@ -45,6 +45,14 @@ namespace StockX.NET_Unit_Testing
                     Console.WriteLine($"Amount: {sale.Amount} Size: {sale.Size}");
                 }
             }
+
+            Console.WriteLine("Please enter an email: ");
+            string email = Console.ReadLine();
+            Console.WriteLine("Please enter the password: ");
+            string password = Console.ReadLine();
+            var loginAccount = StockX.NET.Functions.Login.LoginToAccount(email, password);
+            Console.WriteLine($"Username: {loginAccount.Username} UUID: {loginAccount.UUID}");
+
             Console.ReadKey();
         }
     }
