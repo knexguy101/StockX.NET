@@ -25,12 +25,12 @@ namespace StockX.NET.Models
                 Billing = new BillingAndShipping().LoadBillingAndShipping(Object["Customer"]["Billing"]["Address"] as JObject),
                 Shipping = new BillingAndShipping().LoadBillingAndShipping(Object["Customer"]["Shipping"]["Address"] as JObject),
                 CCInfo = new CreditCardInfo().LoadCardInfo(Object["Customer"]["Billing"] as JObject),
-                Email = String(Object, "email"),
-                IntercomToken = String(Object, "intercome_token"),
-                MD5Email = String(Object, "md5Email"),
-                UUID = String(Object, "uuid"),
-                Sha1Email = String(Object, "sha1Email"),
-                Username = String(Object, "username")
+                Email = String(Object["Customer"] as JObject, "email"),
+                IntercomToken = String(Object["Customer"] as JObject, "intercome_token"),
+                MD5Email = String(Object["Customer"] as JObject, "md5Email"),
+                UUID = String(Object["Customer"] as JObject, "uuid"),
+                Sha1Email = String(Object["Customer"] as JObject, "sha1Email"),
+                Username = String(Object["Customer"] as JObject, "username")
             };
         }
     }

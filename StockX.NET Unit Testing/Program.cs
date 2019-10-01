@@ -12,7 +12,7 @@ namespace StockX.NET_Unit_Testing
         static void Main(string[] args)
         {
             //search testing
-            Console.WriteLine("Please enter a search string:");
+            /*Console.WriteLine("Please enter a search string:");
             string searchString = Console.ReadLine();
             var searchList = StockX.NET.Functions.Search.SearchProducts(searchString);
             foreach(var item in searchList)
@@ -44,7 +44,7 @@ namespace StockX.NET_Unit_Testing
                 {
                     Console.WriteLine($"Amount: {sale.Amount} Size: {sale.Size}");
                 }
-            }
+            }*/
 
             Console.WriteLine("Please enter an email: ");
             string email = Console.ReadLine();

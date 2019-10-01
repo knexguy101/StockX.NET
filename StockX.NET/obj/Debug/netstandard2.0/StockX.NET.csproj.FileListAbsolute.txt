@@ -6,4 +6,3 @@ C:\Users\chris\source\repos\StockX.NET\StockX.NET\obj\Debug\netstandard2.0\Stock
 C:\Users\chris\source\repos\StockX.NET\StockX.NET\bin\Debug\netstandard2.0\StockX.NET.pdb
 C:\Users\chris\source\repos\StockX.NET\StockX.NET\obj\Debug\netstandard2.0\StockX.NET.dll
 C:\Users\chris\source\repos\StockX.NET\StockX.NET\obj\Debug\netstandard2.0\StockX.NET.pdb
-C:\Users\chris\source\repos\StockX.NET\StockX.NET\obj\Debug\netstandard2.0\StockX.NET.csprojAssemblyReference.cache

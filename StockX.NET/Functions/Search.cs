@@ -74,5 +74,36 @@ namespace StockX.NET.Functions
 
             return Temp;
         }
+
+        /// <summary>
+        /// Returns a list of products on the page specified
+        /// </summary>
+        /// <param name="Page"></param>
+        /// <param name="Type"></param>
+        /// <param name="Proxy"></param>
+        /// <returns></returns>
+        public static List<Product> ListProductsOnPage(int Page, ProductType Type, WebProxy Proxy = null)
+        {
+            List<Product> Temp = new List<Product>();
+            HttpClientHandler handler = new HttpClientHandler()
+            {
+                Proxy = Proxy,
+                CookieContainer = new CookieContainer(),
+                AllowAutoRedirect = true
+            };
+            HttpClient client = new HttpClient(handler);
+            client.DefaultRequestHeaders.Add("Accept", "*/*");
+            client.DefaultRequestHeaders.Add("Accept-Language", "en-US,en;q=0.9");
+            client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36");
+
+            var response = client.GetAsync($"https://stockx.com/api/browse?productCategory={Type.ToString().ToLower()}&page={Page}").Result;
+            JObject tempObject = JObject.Parse(response.Content.ReadAsStringAsync().Result);
+            foreach (JObject temp in (tempObject.SelectToken("Products") as JArray).Children<JObject>())
+            {
+                Temp.Add(new Product().LoadJSON(temp));
+            }
+
+            return Temp;
+        }
     }
 }
